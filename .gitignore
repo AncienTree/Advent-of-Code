@@ -24,3 +24,5 @@ hs_err_pid*
 .settings/org.eclipse.jdt.core.prefs
 .project
 .classpath
+!/.idea/
+!/Advent-of-Code.iml
