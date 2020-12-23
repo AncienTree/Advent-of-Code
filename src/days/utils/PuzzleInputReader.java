@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Mateusz D¹bek
+ * @author Mateusz Dï¿½bek
  * @created 2 gru 2020
  */
 public class PuzzleInputReader {
@@ -43,5 +43,4 @@ public class PuzzleInputReader {
 		} 
 		return inputList;		
 	}
-
 }
