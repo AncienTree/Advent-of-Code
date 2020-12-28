@@ -1,23 +1,16 @@
-package days.day5;
+package com.java.day5;
 
-import days.utils.PuzzleInputReader;
+import com.java.utils.Day;
+import com.java.utils.PuzzleInputReader;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @author Mateusz D�bek
- * @created 18 gru 2020
- */
+public class Day5 implements Day {
+    List<String> input = PuzzleInputReader.getInputString("inputday5.txt");
 
-public class Day5Puzzle1 {
-
-
-    public static void main(String[] args) {
-        List<String> input = PuzzleInputReader.getInputString("inputday5.txt");
-        boardingPass(input);
-    }
-
-    public static void boardingPass(List<String> input) {
+    @Override
+    public void puzzle1() {
         int row = 0, column = 0, lh, uh, seat;
         int highestSeatID = Integer.MIN_VALUE;
         List<Integer> seats = new ArrayList<>();
@@ -62,6 +55,9 @@ public class Day5Puzzle1 {
             }
             lastId = id;
         }
+    }
+    @Override
+    public void puzzle2() {
 
     }
 }
