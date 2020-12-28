@@ -43,4 +43,20 @@ public class PuzzleInputReader {
 		} 
 		return inputList;		
 	}
+
+	public static String rawInput(String fileName) {
+		StringBuilder stringBuilder = new StringBuilder();
+		File file = new File(fileName);
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+			String str = null;
+			while((str = bufferedReader.readLine()) != null) {
+				stringBuilder.append(str).append("\n");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return stringBuilder.toString();
+	}
+
 }

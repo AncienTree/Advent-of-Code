@@ -17,12 +17,11 @@ public class AdventOfCode2020 {
         Day day5 = new Day5();
         Day day6 = new Day6();
 
-//
 //        day1.run();
 //        day2.run();
 //        day3.run();
 //        day4.run();
-        day5.run();
-//        day6.run();
+//        day5.run();
+        day6.run();
     }
 }
