@@ -1,7 +1,7 @@
 /**
  * 
  */
-package days.utils;
+package com.java.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
