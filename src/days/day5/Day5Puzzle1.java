@@ -1,11 +1,8 @@
-package days.day5.day4;
+package days.day5;
 
 import days.utils.PuzzleInputReader;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Mateusz D�bek
@@ -17,12 +14,13 @@ public class Day5Puzzle1 {
 
     public static void main(String[] args) {
         List<String> input = PuzzleInputReader.getInputString("inputday5.txt");
-        System.out.println(boardingPass(input));
+        boardingPass(input);
     }
 
-    public static int boardingPass(List<String> input) {
+    public static void boardingPass(List<String> input) {
         int row = 0, column = 0, lh, uh, seat;
         int highestSeatID = Integer.MIN_VALUE;
+        List<Integer> seats = new ArrayList<>();
         for (String boardingPass: input) {
             lh = 0;
             uh = 128;
@@ -48,12 +46,22 @@ public class Day5Puzzle1 {
             }
             column = uh -1;
             seat = (row * 8) + column;
+            seats.add(seat);
             if (seat > highestSeatID) {
                 highestSeatID = seat;
             }
         }
+        seats.sort(Integer::compareTo);
 
+        System.out.println("Największa wartość ID to: " + highestSeatID);
 
-        return highestSeatID;
+        int lastId = -1;
+        for (Integer id: seats) {
+            if(lastId != -1 && id - lastId == 2) {
+                System.out.println("Twoje miejsce to: " + (id - 1));
+            }
+            lastId = id;
+        }
+
     }
 }
