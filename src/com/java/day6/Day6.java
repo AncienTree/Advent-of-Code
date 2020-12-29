@@ -13,42 +13,28 @@ public class Day6 implements Day {
 
     @Override
     public void puzzle1() {
-        List<String> listInput = getFilteredInputList();
-        Set<Character> inputSet = new HashSet<>();
+        List<Character> yesAnswer = new ArrayList<>();
         int sum = 0;
 
-        for (String row: listInput) {
-            System.out.println("===========");
-            System.out.println("Size: " + row.length() + " | " + row);
-            for (int i = 0; i < row.length(); i++) {
-                inputSet.add(row.charAt(i));
-                System.out.println(row.charAt(i));
+        for (String s: input) {
+            if (s.trim().isEmpty()) {
+               int count = yesAnswer.size();
+               sum += count;
+               yesAnswer.clear();
+            } else {
+                for (char c: s.trim().toCharArray()) {
+                    if (!yesAnswer.contains(c)) {
+                        yesAnswer.add(c);
+                    }
+                }
             }
-            System.out.println("=======");
-            System.out.println(inputSet.size());
-            System.out.println(inputSet.toString());
-            sum += inputSet.size();
-            inputSet.clear();
         }
-        System.out.println("Suma odpowiedzi: " + sum);
+        sum += yesAnswer.size(); // dodanie ostatniej lini
+        System.out.println("Part1. Suma odpowiedzi to :" + sum);
     }
 
     @Override
     public void puzzle2() {
 
-    }
-    private List<String> getFilteredInputList() {
-        input.add("");
-        List<String> puzzleInput = new ArrayList<>();
-        StringBuilder tempString = new StringBuilder();
-        for (String row: input) {
-            if(row.equals("")) {
-                puzzleInput.add(tempString.toString());
-                tempString = new StringBuilder();
-            } else {
-                tempString.append(row);
-            }
-        }
-        return puzzleInput;
     }
 }
