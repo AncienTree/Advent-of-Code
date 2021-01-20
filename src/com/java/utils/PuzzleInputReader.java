@@ -40,7 +40,8 @@ public class PuzzleInputReader {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
+		}
+		inputList.add("");
 		return inputList;		
 	}
 

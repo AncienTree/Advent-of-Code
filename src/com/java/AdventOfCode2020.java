@@ -6,6 +6,7 @@ import com.java.day3.Day3;
 import com.java.day4.Day4;
 import com.java.day5.Day5;
 import com.java.day6.Day6;
+import com.java.day7.Day7;
 import com.java.utils.Day;
 
 public class AdventOfCode2020 {
@@ -16,12 +17,14 @@ public class AdventOfCode2020 {
         Day day4 = new Day4();
         Day day5 = new Day5();
         Day day6 = new Day6();
+        Day day7 = new Day7();
 
 //        day1.run();
 //        day2.run();
 //        day3.run();
 //        day4.run();
 //        day5.run();
-        day6.run();
+//        day6.run();
+        day7.run();
     }
 }
